@@ -1,0 +1,21 @@
+restaurant = {
+    'name':'',
+    'location':{
+        'streetNumber':'',
+        'street':'',
+        'city':'',
+        'zipcode':'',
+        'state':'',
+        'country':''
+    },
+    'cuisineType':'',
+    'mark':'',
+    'owner':'',
+    'avgCost':'',
+    'services':{
+        'AC':'',
+        'handicapedAccess':'',
+        'smoker':'',
+        'terrace':''
+    }
+};
