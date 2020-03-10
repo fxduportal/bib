@@ -19,3 +19,10 @@ restaurant = {
         'terrace':''
     }
 };
+
+const michelin = require('./server/michelin');
+
+const restaurant = michelin.get();
+restaurant.forEach(restaurant => {
+    console.log(restaurant.name);    
+});
