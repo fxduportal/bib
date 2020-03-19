@@ -8,9 +8,10 @@ const cheerio = require('cheerio');
  */
 const parse = data => {
     const $ = cheerio.load(data);
-    const name = $('.section-main h2.restaurant-details__heading--title').text();
-    const experience = $('#experience-section > ul > li:nth-child(2)').text();
-    const locationScraped = $(".restaurant-details__heading.d-lg-none > ul > li:nth-child(1)").text();
+    const name = $('.section-main h2.restaurant-details__heading--title').text().trim();
+    var experience = $('#experience-section > ul > li:nth-child(2)').text().trim();
+    experience = experience.replace("\n", " ").replace("ò", " ").trim();
+    const locationScraped = $(".restaurant-details__heading.d-lg-none > ul > li:nth-child(1)").text().trim();
     const splitedLocation = locationScraped.split(",");
     const location = { 'street': splitedLocation[0], 'city': splitedLocation[1], 'zipcode': splitedLocation[2], 'country': splitedLocation[3] };
     return { name, experience, location };
@@ -25,7 +26,7 @@ module.exports.scrapeRestaurant = async url => {
     const response = await axios(url);
     const { data, status } = response;
     if (status >= 200 && status < 300) {
-        return parse(data);
+        return parse(data.trim());
     }
     console.error(status);
 
@@ -43,15 +44,27 @@ module.exports.get = async url => {
         const response = await axios(url + i);
         const { data, status } = response;
         if (status >= 200 && status < 300) {
-            listRestaurants.push(parseRestaurants(data));
+            var restaurant = parseRestaurants(data);
+            for (let index = 0; index < restaurant.length; index++) {
+                listRestaurants.push(restaurant[index]);
+            }
         }
         else {
             console.error(status);
-            return null;
         }
+        writeInJson('./bibList.json',listRestaurants);
     }
-    return listRestaurants;
+};
 
+function writeInJson(nameFile, jsonToInsert) {
+    var fs = require('fs');
+    fs.writeFileSync(nameFile, JSON.stringify(jsonToInsert, null, 4), (err) => {
+        if (err) {
+            console.error(err);
+            return;
+        };
+        console.log("File filled");
+    })
 };
 
 const parseRestaurants = data => {
