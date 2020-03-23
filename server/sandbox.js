@@ -16,8 +16,9 @@ async function sandbox(searchLink = "https://guide.michelin.com/fr/fr/restaurant
             };
             console.log("File filled");
         });*/
-        //await maitreRestaurateur.scrapeRestaurant("https://www.maitresrestaurateurs.fr/module/annuaire/ajax/load-maps-data");
-        await michelin.get(searchLink);
+        
+        //await michelin.get(searchLink);
+        await maitreRestaurateur.httpGet(searchLink);
 
         console.log('done');
         process.exit(0);

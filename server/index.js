@@ -20,9 +20,14 @@ restaurant = {
     }
 };
 
-const michelin = require('./server/michelin');
 
-const restaurant = michelin.get();
-restaurant.forEach(restaurant => {
-    console.log(restaurant.name);    
-});
+module.exports.writeInJson = (nameFile, jsonToInsert) => {
+    var fs = require('fs');
+    fs.writeFileSync(nameFile, JSON.stringify(jsonToInsert, null, 4), (err) => {
+        if (err) {
+            console.error(err);
+            return;
+        };
+        console.log("File filled");
+    });
+};

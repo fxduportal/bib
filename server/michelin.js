@@ -1,12 +1,13 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
+const index = require('./index.js')
 
 /**
  * Parse webpage restaurant
  * @param  {String} data - html response
  * @return {Object} restaurant
  */
-const parse = data => {
+parse = data => {
     const $ = cheerio.load(data);
     const name = $('.section-main h2.restaurant-details__heading--title').text().trim();
     var experience = $('#experience-section > ul > li:nth-child(2)').text().trim();
@@ -22,15 +23,27 @@ const parse = data => {
  * @param  {String}  url
  * @return {Object} restaurant
  */
-module.exports.scrapeRestaurant = async url => {
-    const response = await axios(url);
-    const { data, status } = response;
+scrapeRestaurant = async url => {
+  const response = await axios(url);
+  const {data, status} = response;
     if (status >= 200 && status < 300) {
         return parse(data.trim());
     }
     console.error(status);
-
     return null;
+};
+
+/**
+ * Gives us all the infos from our list of restaurants in order to fill our json the same way we descibed a restaurant in index.js
+ * @param {*} listRestaurants 
+ */
+scrapeRestaurantFromUrls = async listRestaurants => {
+    var restaurantsJSON = [];
+    for (let index = 0; index < listRestaurants.length; index++) {
+        restaurant = await scrapeRestaurant(listRestaurants[index]);
+        restaurantsJSON.push(restaurant);
+    }
+    return restaurantsJSON;
 };
 
 /**
@@ -39,35 +52,42 @@ module.exports.scrapeRestaurant = async url => {
  */
 module.exports.get = async url => {
     var listRestaurants = [];
-
+    var listRestaurantsFormatted = [];
     for (let i = 0; i < 15; i++) {
         const response = await axios(url + i);
         const { data, status } = response;
         if (status >= 200 && status < 300) {
-            var restaurant = parseRestaurants(data);
-            for (let index = 0; index < restaurant.length; index++) {
-                listRestaurants.push(restaurant[index]);
-            }
+            listRestaurants.push(parseRestaurants(data));
         }
         else {
             console.error(status);
+            return null;
         }
-        writeInJson('./bibList.json',listRestaurants);
     }
+    listRestaurants.forEach(restaurant => {
+        restaurant.forEach(urlRestau => {
+            listRestaurantsFormatted.push(urlRestau);
+        });
+    });
+    let restaurantJson = await scrapeRestaurantFromUrls(listRestaurantsFormatted);
+    index.writeInJson('./server/bibList.json', restaurantJson);
 };
 
-function writeInJson(nameFile, jsonToInsert) {
+
+
+/*function writeInJson(nameFile, jsonToInsert) {
     var fs = require('fs');
-    fs.writeFileSync(nameFile, JSON.stringify(jsonToInsert, null, 4), (err) => {
+    console.log(nameFile)
+    fs.writeFile(nameFile, JSON.stringify(jsonToInsert, null, 4), (err) => {
         if (err) {
             console.error(err);
-            return;
+            return null;
         };
         console.log("File filled");
-    })
-};
+    });
+};*/
 
-const parseRestaurants = data => {
+parseRestaurants = data => {
     const $ = cheerio.load(data);
     var links = []
     const basURL = 'https://guide.michelin.com/';
