@@ -1,6 +1,6 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-const index = require('./index.js')
+var fs = require('fs');
 
 /**
  * Parse webpage restaurant
@@ -70,6 +70,7 @@ module.exports.get = async url => {
         });
     });
     let restaurantJson = await scrapeRestaurantFromUrls(listRestaurantsFormatted);
+    console.table(restaurantJson);
     index.writeInJson('./server/bibList.json', restaurantJson);
 };
 
@@ -82,4 +83,14 @@ parseRestaurants = data => {
         links.push(basURL + $(elem).prop("href"));
     });
     return links;
+};
+
+writeInJson = (nameFile, jsonToInsert) => {
+    fs.writeFileSync(nameFile, JSON.stringify(jsonToInsert, null, 4), (err) => {
+        if (err) {
+            console.error(err);
+            return null;
+        };
+        console.log("File filled");
+    });
 };

@@ -1,6 +1,6 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-const index = require('./index.js')
+var fs = require('fs');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 const parse = data => {
@@ -28,7 +28,7 @@ const parse = data => {
     return restaurants;
 };
 
-module.exports.httpGet = async url => {
+module.exports.httpGet = async () => {
     var restaus = [];
     var responseParsed = [];
     let nb_page = 1;
@@ -38,15 +38,25 @@ module.exports.httpGet = async url => {
             xmlHttp.open("POST", `https://www.maitresrestaurateurs.fr/annuaire/ajax/loadresult?page=${nb_page}&request_id=07d54324f80f6ac950149192e3d19cca`, false);
             xmlHttp.send();
             var response = xmlHttp.responseText;
+            console.log(response)
             responseParsed = parse(response)
             restaus.push(...responseParsed);
             nb_page += 1;
-            console.log(nb_page)
         } catch (error) {
             console.error(error);
             return null;
         };
     } while (nb_page < 150)
-
-    index.writeInJson('./server/MrList.json', restaus);
+    console.table(restaus);
+    writeInJson('./server/MrList.json', restaus);
 }
+
+writeInJson = (nameFile, jsonToInsert) => {
+    fs.writeFileSync(nameFile, JSON.stringify(jsonToInsert, null, 4), (err) => {
+        if (err) {
+            console.error(err);
+            return null;
+        };
+        console.log("File filled");
+    });
+};
