@@ -1,13 +1,14 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-var fs = require('fs');
+const index = require('./index.js')
 
 /**
  * Parse webpage restaurant
  * @param  {String} data - html response
+ * @param {String} url
  * @return {Object} restaurant
  */
-parse = data => {
+parse = (data,url) => {
     const $ = cheerio.load(data);
     const name = $('.section-main h2.restaurant-details__heading--title').text().trim();
     var experience = $('#experience-section > ul > li:nth-child(2)').text().trim();
@@ -15,7 +16,7 @@ parse = data => {
     const locationScraped = $(".restaurant-details__heading.d-lg-none > ul > li:nth-child(1)").text().trim();
     const splitedLocation = locationScraped.split(",");
     const location = { 'street': splitedLocation[0], 'city': splitedLocation[1], 'zipcode': splitedLocation[2], 'country': splitedLocation[3] };
-    return { name, experience, location };
+    return { name, experience, location, url };
 };
 
 /**
@@ -27,7 +28,7 @@ scrapeRestaurant = async url => {
   const response = await axios(url);
   const {data, status} = response;
     if (status >= 200 && status < 300) {
-        return parse(data.trim());
+        return parse(data.trim(),url);
     }
     console.error(status);
     return null;
@@ -35,7 +36,7 @@ scrapeRestaurant = async url => {
 
 /**
  * Gives us all the infos from our list of restaurants in order to fill our json the same way we descibed a restaurant in index.js
- * @param {*} listRestaurants 
+ * @param {Array} listRestaurants 
  */
 scrapeRestaurantFromUrls = async listRestaurants => {
     var restaurantsJSON = [];
@@ -70,7 +71,7 @@ module.exports.get = async url => {
         });
     });
     let restaurantJson = await scrapeRestaurantFromUrls(listRestaurantsFormatted);
-    console.table(restaurantJson);
+    console.table(restaurantJson)
     index.writeInJson('./server/bibList.json', restaurantJson);
 };
 
@@ -83,14 +84,4 @@ parseRestaurants = data => {
         links.push(basURL + $(elem).prop("href"));
     });
     return links;
-};
-
-writeInJson = (nameFile, jsonToInsert) => {
-    fs.writeFileSync(nameFile, JSON.stringify(jsonToInsert, null, 4), (err) => {
-        if (err) {
-            console.error(err);
-            return null;
-        };
-        console.log("File filled");
-    });
 };

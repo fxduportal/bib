@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import ListRestau from './data/list'
-import {Table }from 'antd'
 
 function App() {
  
