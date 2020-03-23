@@ -31,7 +31,7 @@ const maitreRestaurateur = require('./maitreRestaurateur')
 
 async function initDB(searchLink = "https://guide.michelin.com/fr/fr/restaurants/bib-gourmand/page/") {
     try {
-        //await michelin.get(searchLink);
+        await michelin.get(searchLink);
         await maitreRestaurateur.httpGet();
         console.log('done');
         process.exit(0);
@@ -43,7 +43,7 @@ async function initDB(searchLink = "https://guide.michelin.com/fr/fr/restaurants
 
 const [, , searchLink] = process.argv;
 
-initDB(searchLink);
+//initDB(searchLink);
 
 
 module.exports.writeInJson = (nameFile, jsonToInsert) => {

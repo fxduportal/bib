@@ -1,7 +1,8 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 var fs = require('fs');
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const qs = require('qs')
+const index = require('./index.js')
 
 const parse = data => {
     const $ = cheerio.load(data);
@@ -34,13 +35,12 @@ module.exports.httpGet = async () => {
     let nb_page = 1;
     do {
         try {
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open("POST", `https://www.maitresrestaurateurs.fr/annuaire/ajax/loadresult?page=${nb_page}&request_id=07d54324f80f6ac950149192e3d19cca`, false);
-            xmlHttp.send();
-            var response = xmlHttp.responseText;
-            console.log(response)
-            responseParsed = parse(response)
-            restaus.push(...responseParsed);
+            const response = await axios.post("https://www.maitresrestaurateurs.fr/annuaire/ajax/loadresult",qs.stringify({request_id:"07d54324f80f6ac950149192e3d19cca",page : nb_page}))
+            const {data, status} = response;
+            if(status>=200 && status<300){
+                responseParsed = parse(data)
+                restaus.push(...responseParsed);
+            }
             nb_page += 1;
         } catch (error) {
             console.error(error);
@@ -48,7 +48,7 @@ module.exports.httpGet = async () => {
         };
     } while (nb_page < 150)
     console.table(restaus);
-    writeInJson('./server/MrList.json', restaus);
+    index.writeInJson('./server/MrList.json', restaus);
 }
 
 writeInJson = (nameFile, jsonToInsert) => {
