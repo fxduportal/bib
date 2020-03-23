@@ -12,7 +12,7 @@ parse = (data,url) => {
     const $ = cheerio.load(data);
     const name = $('.section-main h2.restaurant-details__heading--title').text().trim();
     var experience = $('#experience-section > ul > li:nth-child(2)').text().trim();
-    experience = experience.replace("\n", " ").replace("ò", " ").trim();
+    experience = experience.replace("\n", " ").replace("ó", " ").trim();
     const locationScraped = $(".restaurant-details__heading.d-lg-none > ul > li:nth-child(1)").text().trim();
     const splitedLocation = locationScraped.split(",");
     const location = { 'street': splitedLocation[0], 'city': splitedLocation[1], 'zipcode': splitedLocation[2], 'country': splitedLocation[3] };

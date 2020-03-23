@@ -34,8 +34,6 @@ async function initDB(searchLink = "https://guide.michelin.com/fr/fr/restaurants
     try {
         await michelin.get(searchLink);
         await maitreRestaurateur.httpGet();
-        console.log('done');
-        process.exit(0);
     } catch (e) {
         console.error(e);
         process.exit(1);
@@ -58,11 +56,6 @@ module.exports.writeInJson = (nameFile, jsonToInsert) => {
 };
 
 
-var readJson = (nameFile) => {
-    var readJson = fs.readFileSync(nameFile)
-    return readJson;
-};
-
 const linkTwoJson = () => {
     let bibAndMr = [];
     let key = 1;
@@ -75,15 +68,13 @@ const linkTwoJson = () => {
         mrNames.push(MrRestau.name);
         mrAdress.push(MrRestau.address)
     });
-    console.table(mrAdress)
 
     bib.forEach(bibRestau => {
         if (bibRestau.location.city != null) {
             var matcheName = stringSimilarity.findBestMatch(bibRestau.name, mrNames);
             var matcheAdress = stringSimilarity.findBestMatch(bibRestau.location.city, mrAdress);
-            console.log(matcheName.bestMatch.rating);
-            bibRestau.experience = bibRestau.experience.replace("ò", " ").trim()
             if (matcheName.bestMatch.rating >= 0.6 && matcheAdress.bestMatch.rating >= 0.2) {
+                let tagsExp = [bibRestau.experience.replace("ó", " ").trim() ]
                 rest = {
                     key: key,
                     name: bibRestau.name,
@@ -91,7 +82,8 @@ const linkTwoJson = () => {
                     street: bibRestau.location.street,
                     city: bibRestau.location.city,
                     zipcode: bibRestau.location.zipcode,
-                    country: bibRestau.location.country
+                    country: bibRestau.location.country,
+                    tags: tagsExp
                 };
                 bibAndMr.push(rest);
                 console.table(bibAndMr);

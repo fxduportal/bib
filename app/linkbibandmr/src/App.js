@@ -2,8 +2,8 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import './index.css';
 import { Table, Tag } from 'antd';
-import bibList from './bibList.json'
-
+import bibAndmr from './data/bibAndmr.json'
+console.log(bibAndmr)
 const columns = [
   {
     title: 'Name',
@@ -29,8 +29,11 @@ const columns = [
       <span>
         {tags.map(tag => {
           let color = tag.length > 5 ? 'geekblue' : 'green';
-          if (tag === 'confortable') {
+          if (tag === 'Standing simple') {
             color = 'volcano';
+          }
+          else if(tag == 'Bon standing'){
+            color = 'green';
           }
           return (
             <Tag color={color} key={tag}>
@@ -43,34 +46,11 @@ const columns = [
   },
   ];
 
-const data = [
-   {
-       key:'1',
-        name: "Le Rousseau",
-        "experience": "Assez confortable",
-            "street": "3 rue Jean-Jacques-Rousseau",
-            "city": " Grenoble",
-            "zipcode": " 38000",
-            "country": " France",
-           tags: ['confortable'],
-    },
-     {
-       key:'2',
-        name: "Le Rousseau",
-        "experience": "Assez confortable",
-            "street": "3 rue Jean-Jacques-Rousseau",
-            "city": " Grenoble",
-            "zipcode": " 38000",
-            "country": " France",
-             tags: ['Assez confortable', 'COSY'],
-    },
-  
-];
 
 function App() {
   return (
     <div className="App">
-    <Table columns={columns} dataSource={data} />
+    <Table columns={columns} dataSource={bibAndmr} />
     </div>
   );
 }

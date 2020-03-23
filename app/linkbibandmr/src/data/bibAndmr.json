@@ -6,7 +6,10 @@
         "street": "Grande-Rue",
         "city": " Yvoire",
         "zipcode": " 74140",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 2,
@@ -15,7 +18,10 @@
         "street": "place de l'Église",
         "city": " Plaisians",
         "zipcode": " 26170",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Standing simple"
+        ]
     },
     {
         "key": 3,
@@ -24,7 +30,10 @@
         "street": "19 rue de la République",
         "city": " Neuillé-le-Lierre",
         "zipcode": " 37380",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 4,
@@ -33,7 +42,10 @@
         "street": "2 route de Bordeaux",
         "city": " Orcines",
         "zipcode": " 63870",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 5,
@@ -42,7 +54,10 @@
         "street": "Grande-Rue",
         "city": " Yvoire",
         "zipcode": " 74140",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 6,
@@ -51,7 +66,10 @@
         "street": "place de l'Église",
         "city": " Plaisians",
         "zipcode": " 26170",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Standing simple"
+        ]
     },
     {
         "key": 7,
@@ -60,7 +78,10 @@
         "street": "19 rue de la République",
         "city": " Neuillé-le-Lierre",
         "zipcode": " 37380",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 8,
@@ -69,7 +90,10 @@
         "street": "2 route de Bordeaux",
         "city": " Orcines",
         "zipcode": " 63870",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 9,
@@ -78,7 +102,10 @@
         "street": "2 rue de la Rochette",
         "city": " Fréland",
         "zipcode": " 68240",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 10,
@@ -87,7 +114,10 @@
         "street": "1 avenue du Pont-de-Malakoff",
         "city": " Valady",
         "zipcode": " 12330",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 11,
@@ -96,7 +126,10 @@
         "street": "1 rue Albert-Thibaudet",
         "city": " Tournus",
         "zipcode": " 71700",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Standing simple"
+        ]
     },
     {
         "key": 12,
@@ -105,7 +138,10 @@
         "street": "3 place Bouchard",
         "city": " L'Île-Bouchard",
         "zipcode": " 37220",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 13,
@@ -114,7 +150,10 @@
         "street": "5 place de la Victoire",
         "city": " Yssingeaux",
         "zipcode": " 43200",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 14,
@@ -123,7 +162,10 @@
         "street": "4 rue des Ormelets",
         "city": " Ploubalay",
         "zipcode": " 22650",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 15,
@@ -132,7 +174,10 @@
         "street": "40 rue du Maréchal-Foch",
         "city": " Belleville",
         "zipcode": " 69220",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Standing simple"
+        ]
     },
     {
         "key": 16,
@@ -141,7 +186,10 @@
         "street": "route du col d'Ispéguy",
         "city": " Saint-Étienne-de-Baïgorry",
         "zipcode": " 64430",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing. Nos plus belles adresses."
+        ]
     },
     {
         "key": 17,
@@ -150,7 +198,10 @@
         "street": "2 Quartier de la Gare",
         "city": " Wœlfling-lès-Sarreguemines",
         "zipcode": " 57200",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 18,
@@ -159,7 +210,10 @@
         "street": "27 rue Rachais",
         "city": " Lyon",
         "zipcode": " 69007",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Standing simple"
+        ]
     },
     {
         "key": 19,
@@ -168,7 +222,10 @@
         "street": "10 Route Nationale 23",
         "city": " Saint-Jean-de-Linières",
         "zipcode": " 49070",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 20,
@@ -177,7 +234,10 @@
         "street": "3 rue d'Huisne",
         "city": " La Ferté-Bernard",
         "zipcode": " 72400",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 21,
@@ -186,7 +246,10 @@
         "street": "6 rue du Chambertin",
         "city": " Gevrey-Chambertin",
         "zipcode": " 21220",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Standing simple"
+        ]
     },
     {
         "key": 22,
@@ -195,7 +258,10 @@
         "street": "47 avenue Foch",
         "city": " Lyon",
         "zipcode": " 69006",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Standing simple"
+        ]
     },
     {
         "key": 23,
@@ -204,7 +270,10 @@
         "street": "96 rue Principale",
         "city": " Berrwiller",
         "zipcode": " 68500",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Bon standing"
+        ]
     },
     {
         "key": 24,
@@ -213,6 +282,9 @@
         "street": "50 boulevard de la Promenade",
         "city": " Lagrasse",
         "zipcode": " 11220",
-        "country": " France"
+        "country": " France",
+        "tags": [
+            "Standing simple"
+        ]
     }
 ]
