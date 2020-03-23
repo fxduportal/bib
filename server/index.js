@@ -24,6 +24,7 @@ restaurant = {
 };
 
 var fs = require('fs');
+var stringSimilarity = require('string-similarity');
 
 
 const michelin = require('./michelin');
@@ -39,7 +40,7 @@ async function initDB(searchLink = "https://guide.michelin.com/fr/fr/restaurants
         console.error(e);
         process.exit(1);
     }
-}
+};
 
 const [, , searchLink] = process.argv;
 
@@ -63,11 +64,44 @@ var readJson = (nameFile) => {
 };
 
 const linkTwoJson = () => {
-    var bibAndMr = [];
-    const bib = readJson('./server/bibList.json');
-    const Mr = readJson('./server/MrList.json');
-
-    bib.forEach(bibRest => {
-        if(bibRest.name ){}
+    let bibAndMr = [];
+    let key = 1;
+    let rest = {};
+    const bib = require('./bibList.json');
+    const Mr = require('./MrList.json');
+    let mrNames = [];
+    let mrAdress = [];
+    Mr.forEach(MrRestau => {
+        mrNames.push(MrRestau.name);
+        mrAdress.push(MrRestau.address)
     });
-}
+    console.table(mrAdress)
+
+    bib.forEach(bibRestau => {
+        if (bibRestau.location.city != null) {
+            var matcheName = stringSimilarity.findBestMatch(bibRestau.name, mrNames);
+            var matcheAdress = stringSimilarity.findBestMatch(bibRestau.location.city, mrAdress);
+            console.log(matcheName.bestMatch.rating);
+            bibRestau.experience = bibRestau.experience.replace("ò", " ").trim()
+            if (matcheName.bestMatch.rating >= 0.6 && matcheAdress.bestMatch.rating >= 0.2) {
+                rest = {
+                    key: key,
+                    name: bibRestau.name,
+                    experience: bibRestau.experience,
+                    street: bibRestau.location.street,
+                    city: bibRestau.location.city,
+                    zipcode: bibRestau.location.zipcode,
+                    country: bibRestau.location.country
+                };
+                bibAndMr.push(rest);
+                console.table(bibAndMr);
+                key += 1;
+            };
+        }
+
+    });
+    console.table(bibAndMr);
+    writeInJson("./server/bibAndmr.json", bibAndMr);
+};
+
+linkTwoJson();

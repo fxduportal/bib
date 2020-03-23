@@ -2,7 +2,7 @@
     {
         "key": 1,
         "name": "Les Jardins du Léman",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "Grande-Rue",
         "city": " Yvoire",
         "zipcode": " 74140",
@@ -20,7 +20,7 @@
     {
         "key": 3,
         "name": "Auberge de la Brenne",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "19 rue de la République",
         "city": " Neuillé-le-Lierre",
         "zipcode": " 37380",
@@ -29,7 +29,7 @@
     {
         "key": 4,
         "name": "Auberge de la Baraque",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "2 route de Bordeaux",
         "city": " Orcines",
         "zipcode": " 63870",
@@ -38,7 +38,7 @@
     {
         "key": 5,
         "name": "Les Jardins du Léman",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "Grande-Rue",
         "city": " Yvoire",
         "zipcode": " 74140",
@@ -56,7 +56,7 @@
     {
         "key": 7,
         "name": "Auberge de la Brenne",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "19 rue de la République",
         "city": " Neuillé-le-Lierre",
         "zipcode": " 37380",
@@ -65,7 +65,7 @@
     {
         "key": 8,
         "name": "Auberge de la Baraque",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "2 route de Bordeaux",
         "city": " Orcines",
         "zipcode": " 63870",
@@ -74,7 +74,7 @@
     {
         "key": 9,
         "name": "Restaurant du Musée",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "2 rue de la Rochette",
         "city": " Fréland",
         "zipcode": " 68240",
@@ -83,7 +83,7 @@
     {
         "key": 10,
         "name": "Auberge de l'Ady",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "1 avenue du Pont-de-Malakoff",
         "city": " Valady",
         "zipcode": " 12330",
@@ -101,7 +101,7 @@
     {
         "key": 12,
         "name": "Auberge de l'Île",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "3 place Bouchard",
         "city": " L'Île-Bouchard",
         "zipcode": " 37220",
@@ -110,7 +110,7 @@
     {
         "key": 13,
         "name": "Le Bourbon",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "5 place de la Victoire",
         "city": " Yssingeaux",
         "zipcode": " 43200",
@@ -119,7 +119,7 @@
     {
         "key": 14,
         "name": "Restaurant de la Gare",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "4 rue des Ormelets",
         "city": " Ploubalay",
         "zipcode": " 22650",
@@ -137,7 +137,7 @@
     {
         "key": 16,
         "name": "Restaurant Arcé",
-        "experience": "ó                                     Bon standing. Nos plus belles adresses.",
+        "experience": "Bon standing. Nos plus belles adresses.",
         "street": "route du col d'Ispéguy",
         "city": " Saint-Étienne-de-Baïgorry",
         "zipcode": " 64430",
@@ -146,7 +146,7 @@
     {
         "key": 17,
         "name": "Restaurant Dimofski",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "2 Quartier de la Gare",
         "city": " Wœlfling-lès-Sarreguemines",
         "zipcode": " 57200",
@@ -164,7 +164,7 @@
     {
         "key": 19,
         "name": "Auberge de la Roche",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "10 Route Nationale 23",
         "city": " Saint-Jean-de-Linières",
         "zipcode": " 49070",
@@ -173,7 +173,7 @@
     {
         "key": 20,
         "name": "Restaurant du Dauphin",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "3 rue d'Huisne",
         "city": " La Ferté-Bernard",
         "zipcode": " 72400",
@@ -200,7 +200,7 @@
     {
         "key": 23,
         "name": "L'Arbre Vert",
-        "experience": "ó                                     Bon standing",
+        "experience": "Bon standing",
         "street": "96 rue Principale",
         "city": " Berrwiller",
         "zipcode": " 68500",
