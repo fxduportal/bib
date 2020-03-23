@@ -74,19 +74,6 @@ module.exports.get = async url => {
 };
 
 
-
-/*function writeInJson(nameFile, jsonToInsert) {
-    var fs = require('fs');
-    console.log(nameFile)
-    fs.writeFile(nameFile, JSON.stringify(jsonToInsert, null, 4), (err) => {
-        if (err) {
-            console.error(err);
-            return null;
-        };
-        console.log("File filled");
-    });
-};*/
-
 parseRestaurants = data => {
     const $ = cheerio.load(data);
     var links = []

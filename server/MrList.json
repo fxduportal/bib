@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Brasserie La Choulette",
+        "address": "16 rue des ecoles 59111 HORDAIN",
+        "tel": "0327357244"
+    },
+    {
+        "name": "SCEV LEQUART ET FILS  CHAMPAGNE LAURENT LEQUART",
+        "address": "17 Rue Bruslard 51700 PASSY-GRIGNY",
+        "tel": "03 26 58 97 48"
+    },
+    {
+        "name": "Domaine de la Jobeline",
+        "address": "887 Route de la Roche Vineuse 71960 VERZ�",
+        "tel": "0385229803"
+    },
+    {
+        "name": "WECK CLEMENT ET FILS",
+        "address": "2 PLACE DE LA MAIRIE 68420 GUEBERSCHWIHR",
+        "tel": "0389493189"
+    },
+    {
+        "name": "CESAR ETOILE",
+        "address": "12 avenue de Wagram 75008 PARIS",
+        "tel": "01 42 27 69 82"
+    },
+    {
+        "name": "LE BOUCHE � OREILLE",
+        "address": "18 rue Charles Weill 88110 RAON-L'�TAPE",
+        "tel": "03 29 41 51 34"
+    },
+    {
+        "name": "LE GRAND LARGUE",
+        "address": "1 rue du phare 56640 ARZON",
+        "tel": "02 97 53 71 58"
+    },
+    {
+        "name": "LA COURTINE",
+        "address": "Parc Fran�ois 1er 16100 COGNAC",
+        "tel": "05 45 82 34 78"
+    },
+    {
+        "name": "L'EVEIL DES SENS",
+        "address": "2 Place du lavoir 42130 TRELINS",
+        "tel": "04 77 24 09 43"
+    },
+    {
+        "name": "HOTEL LE WARWICK",
+        "address": "5 rue de Berri 75008 PARIS",
+        "tel": "01 45 63 14 11"
+    }
+]

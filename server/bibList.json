@@ -5712,7 +5712,7 @@
     },
     {
         "name": "L'Arbre Vert",
-        "experience": "ó                                     Confortable",
+        "experience": "Confortable",
         "location": {
             "street": "96 rue Principale",
             "city": " Berrwiller",
@@ -5732,7 +5732,7 @@
     },
     {
         "name": "La Belle Étoile",
-        "experience": "ó                                     Confortable",
+        "experience": "óConfortable",
         "location": {
             "street": "Le Bourg",
             "city": " La Roque-Gageac",
@@ -5772,7 +5772,7 @@
     },
     {
         "name": "Au Relais des Ménétriers",
-        "experience": "ó                                     Confortable",
+        "experience": "Confortable",
         "location": {
             "street": "10 avenue du Général-de-Gaulle",
             "city": " Ribeauvillé",
@@ -5832,7 +5832,7 @@
     },
     {
         "name": "Le Vallon de Chérisy",
-        "experience": "ó                                     Confortable",
+        "experience": "Confortable",
         "location": {
             "street": "12 route de Paris",
             "city": " Cherisy",
@@ -5842,7 +5842,7 @@
     },
     {
         "name": "Les Mets d'Adélaïde",
-        "experience": "ó                                     Confortable",
+        "experience": "Confortable",
         "location": {
             "street": "28 avenue Georges-Alquier",
             "city": " Castres",
@@ -5912,7 +5912,7 @@
     },
     {
         "name": "Le Tire Bouchon",
-        "experience": "ó                                     Confortable",
+        "experience": "Confortable",
         "location": {
             "street": "45 rue Jules-le-Grand",
             "city": " Lorient",
