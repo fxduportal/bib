@@ -12,14 +12,19 @@ const columns = [
     render: text => <a>{text}</a>,
   },
   {
-    title: 'experience',
+    title: 'Experience',
     dataIndex: 'experience',
     key: 'experience',
   },
     {
-    title: 'street',
+    title: 'Street',
     dataIndex: 'street',
     key: 'street',
+  },
+  {
+    title: 'City',
+    dataIndex: 'city',
+    key:'city'
   },
   {
     title: 'Tags',
@@ -46,11 +51,25 @@ const columns = [
   },
   ];
 
-
+  const contentStyle1 = {
+    backgroundColor: '#ffffff',
+    boxShadow: '0px 2px 16px 1px rgba(0, 0, 0, 0.1)',
+    width: '70%',
+    overflow: 'scroll',
+  };
+  const contentStyle2 = {
+    backgroundColor: '#ffffff',
+    boxShadow: '0px 2px 16px 1px rgba(0, 0, 0, 0.1)',
+    width: '100%',
+    overflow: 'none',
+  };
 function App() {
   return (
-    <div className="App">
-    <Table columns={columns} dataSource={bibAndmr} />
+    
+    <div style={contentStyle1} >
+    <h1>Best restaurants in France !</h1>
+    <h2>With Bib and Maitre restaurateur distinctions</h2>
+    <Table style={contentStyle2}  columns={columns} dataSource={bibAndmr} />
     </div>
   );
 }
